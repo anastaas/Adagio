@@ -31,8 +31,8 @@ html {
   background-color: rgb(26, 26, 26);
   color: #fff;
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 15px;
+  right: 15px;
   transition: .25s ease;
 }
 
@@ -41,7 +41,7 @@ html {
 }
 
 /* Header */
-#home  {
+#home {
   width: 100%;
   height: 110vh;
   background-image: url('./img/background.png');
@@ -53,12 +53,14 @@ html {
 
 .nav {
   display: flex;
-  height: 30vh;
-  padding: 40px 80px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 80px;
 }
 
 .logo {
   height: 40px;
+  margin-right: auto;
   transition: 1s ease;
 }
 
@@ -71,7 +73,6 @@ html {
 
 .nav-list {
   text-align: right;
-  flex: 1;
 }
 
 .list-item {
@@ -101,7 +102,6 @@ html {
 }
 
 .welcome h1 {
-  margin-top: -200px;
   font-size: 50px;
   padding-bottom: 20px;
 }
@@ -131,13 +131,15 @@ button:hover {
 
 /* Artists */
 #artists {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   text-align: center;
+  padding: 15px 55px;
 }
 
 #artists p {
   font-weight: 400;
-  margin: 10px 250px 40px 250px;
+  margin: 10px 20px 40px 20px;
 }
 
 .icon {
@@ -147,9 +149,9 @@ button:hover {
 
 .blocks {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin: 0 80px 50px 80px;
+  margin: 0 20px 50px 20px;
 }
 
 .artist {
@@ -178,7 +180,7 @@ button:hover {
 }
 
 #audio-container {
-  width: 80px;
+  width: 20%;
   margin-left: auto;
 }
 
@@ -198,11 +200,14 @@ button:hover {
 .shop-header {
   color: #fff;
   text-align: center;
-  margin: 0px 300px;
+  margin-bottom: 20px;
 }
 
 .shop-header p {
-  margin-top: 10px;
+  max-width: 900px; /* Встановіть бажану ширину тексту */
+  margin: 0 auto; /* Це для центрування тексту */
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .box {
@@ -210,13 +215,13 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 100px;
+  padding: 20px;
 }
 
 .main-box {
-  margin: 0px 400px;
   margin-bottom: 15px;
   border-radius: 20px;
+  width: 60%;
 }
 
 .box label {
@@ -249,6 +254,7 @@ button:hover {
   background: #fff;
   border-radius: 0 0 25px 25px;
   transition: all 0.4s ease;
+  width: 100%;
 }
 
 .main-box input:checked ~ .box-text {
@@ -256,31 +262,37 @@ button:hover {
 }
 
 .box-text p {
-  padding: 15px 20px;
+  padding: 20px;
   font-size: 16px;
+  color: #111;
 }
 
 .text-end {
   text-align: center;
   color: #fff;
-  margin: 20px 400px;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 /* About */
 #about {
   display: flex;
-  height: 80vh;
   flex-direction: row;
   align-items: center;
+  text-align: center;
+  padding: 80px 10%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 100%;
   align-items: center;
   text-align: center;
-  margin: 0px 150px 40px 100px;
+  margin-bottom: 50px;
+  margin-right: 90px;
 }
 
 #about h1 {
@@ -292,14 +304,14 @@ button:hover {
 }
 
 .about-photo {
-  margin-top: 50px;
+  width: 100%;
+  max-width: 600px; /* Встановіть бажану максимальну ширину фото */
   border-radius: 30px;
-  width: 600px;
+  margin-top: 50px;
 }
 
 /* Footer */
 .footer {
-  height: 20vh;
   background-color: rgb(26, 26, 26);
   color: rgb(255, 255, 255);
   display: flex;
@@ -325,3 +337,50 @@ button:hover {
   color: rgb(255,255,255);
   margin-top: 6px;
 }
+
+/* Адаптивні стилі для мобільних екранів */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center; /* Центруємо логотип горизонтально */
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+  }
+
+  .logo {
+    width: 50px; /* Змініть розмір логотипу за потребою */
+  }
+
+  .nav-list {
+    display: none; /* Ховаємо навігацію */
+  }
+
+  .scroll {
+    display: none; /* Ховаємо кнопку прокрутки догори */
+  }
+
+  .welcome {
+    text-align: center;
+  }
+
+  #about {
+    text-align: center;
+  }
+
+  #about img {
+    display: none; /* Ховаємо фото в розділі "Про нас" */
+  }
+
+  #about p {
+    text-align: center; /* Центруємо текст посередині */
+  }
+
+}
+
